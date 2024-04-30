@@ -1,4 +1,5 @@
 # #PamerAjaDulu
+![PamerDuluAja-MBA](https://github.com/depapp/PamerAjaDulu/assets/6134774/d9cb0265-b146-4ac1-9283-98f9df988631)
 
 ## cara setupnya
 - clone projectnya
