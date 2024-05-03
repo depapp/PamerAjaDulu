@@ -9,6 +9,81 @@ import styled from "@emotion/styled";
 import Layout from "../../components/Layout";
 import BackIcon from "../../components/BackIcon";
 import ButtonVisit from "../../components/ButtonVisit";
+import WriteDocsIcon from "../../components/WriteDocsIcon";
+
+const Comments = styled.div``;
+
+const CommentsList = styled.ul`
+  display: grid;
+`;
+
+const Form = styled.form`
+  display: grid;
+  gap: 0.5rem;
+  padding-top: 0.5rem;
+  grid-template-columns: auto 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  margin-bottom: 2rem;
+`;
+
+const UserIconContainer = styled.div`
+  display: flex;
+  width: max-content;
+  border-radius: 100%;
+  padding: 0.3rem;
+  height: max-content;
+  margin-top: 7px;
+
+  svg {
+    width: 28px;
+    height: 28px;
+  }
+`;
+
+const TextArea = styled.textarea`
+  box-sizing: border-box;
+  padding: 1rem;
+  width: 100%;
+  height: ${(props) => props.height}px;
+  grid-column-end: 4;
+  grid-column-start: 2;
+  resize: none;
+  border: none;
+  outline: none;
+`;
+
+const SubmitContainer = styled.div`
+  grid-row: 2;
+  grid-column-start: 3;
+  grid-column-end: 4;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+`;
+
+const Submit = styled.button`
+  background-color: #67ba24;
+  height: max-content;
+  padding: 8px 16px;
+  border: none;
+  width: max-content;
+  cursor: pointer;
+  border-radius: 4px;
+  color: white;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 24px;
+`;
+
+const CommentMessage = styled.p`
+  line-height: 1.6;
+`;
+
+const CommentUsername = styled.span`
+  color: #4b587c;
+`;
 
 const ProductContainer = styled.div``;
 
@@ -82,6 +157,12 @@ const TitleAndSubtitle = styled.div`
 
 const Title = styled.h1`
   font-size: 24px;
+  margin: 1rem 0 0 0;
+  color: #21293c;
+`;
+
+const CommentSectionTitle = styled.h1`
+  font-size: 20px;
   margin: 1rem 0 0 0;
   color: #21293c;
 `;
@@ -203,7 +284,6 @@ export default function Product({ product }) {
     if (!user) return router.push("/login");
 
     if (comment.trim() === "") return;
-    if (comment.length <= 150) return;
 
     const newComment = {};
 
@@ -274,6 +354,44 @@ export default function Product({ product }) {
             diposting oleh <SmallTextView>{creator.name}</SmallTextView> <br />
             pada tanggal <SmallTextView>{formatDate(date)}</SmallTextView>
           </LaunchSummary>
+          <div>
+            <Form onSubmit={onSubmit}>
+              <UserIconContainer>
+                <WriteDocsIcon />
+              </UserIconContainer>
+              <TextArea
+                placeholder="tinggalkan komentarmu disini."
+                height={height}
+                value={comment}
+                onChange={handleChange}
+              />
+              <SubmitContainer>
+                <Submit type="submit">Kirim</Submit>
+              </SubmitContainer>
+            </Form>
+
+            <Comments>
+              {comments.length > 0 && (
+                <CommentsList>
+                  <CommentSectionTitle>
+                    Komentar Tentang Karya Ini
+                  </CommentSectionTitle>
+                  <br />
+                  {comments
+                    .slice()
+                    .reverse()
+                    .map((comment, i) => (
+                      <li key={`${comment.userId}-${i}`}>
+                        <CommentMessage>
+                          "{comment.msg}" -{" "}
+                          <CommentUsername>{comment.userName}</CommentUsername>
+                        </CommentMessage>
+                      </li>
+                    ))}
+                </CommentsList>
+              )}
+            </Comments>
+          </div>
         </ProductContainer>
       </Article>
     </Layout>
