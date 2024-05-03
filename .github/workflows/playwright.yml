@@ -23,10 +23,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
       
     - name: Cache node modules
-      uses: actions/cache@v2
+      uses: actions/cache@v4.0.2
       with:
         path: ~/.npm
         key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
@@ -38,16 +38,16 @@ jobs:
       run: echo "PLAYWRIGHT_VERSION=$(node -e "console.log(require('./package-lock.json').dependencies['@playwright/test'].version)")" >> $GITHUB_ENV
       
     - name: Cache Playwright binaries
-      uses: actions/cache@v2
+      uses: actions/cache@v4.0.2
       id: playwright-cache
       with:
         path: |
           ~/.cache/ms-playwright
         key: ${{ runner.os }}-playwright-${{ env.PLAYWRIGHT_VERSION }}
         
-    - uses: actions/setup-node@v2
+    - uses: actions/setup-node@v4
       with:
-        node-version: '16.x'
+        node-version: lts/*
 
     - run: npm ci
 
@@ -61,7 +61,7 @@ jobs:
     - name: Run Playwright tests
       run: npx playwright test
 
-    - uses: actions/upload-artifact@v2
+    - uses: actions/upload-artifact@v4.3.3
       if: always()
       with:
         name: playwright-test-results
