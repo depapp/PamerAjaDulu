@@ -99,7 +99,7 @@ const Description = styled.p`
   text-align: justify;
 `;
 
-const CompanyName = styled.span`
+const SmallTextView = styled.span`
   font-weight: bold;
   color: #000;
 `;
@@ -271,8 +271,8 @@ export default function Product({ product }) {
           </Link>
           <LaunchSummary>
             <br />
-            diposting oleh <CompanyName>{creator.name}</CompanyName> <br />
-            pada tanggal <CompanyName>{formatDate(date)}</CompanyName>
+            diposting oleh <SmallTextView>{creator.name}</SmallTextView> <br />
+            pada tanggal <SmallTextView>{formatDate(date)}</SmallTextView>
           </LaunchSummary>
         </ProductContainer>
       </Article>

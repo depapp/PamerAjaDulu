@@ -19,8 +19,8 @@ const SearchPage = () => {
     if (q) {
       const query = q.toLowerCase();
       const filteredProducts = products.filter(
-        ({ name, description, company }) => {
-          const fields = [name, description, company];
+        ({ name, description, twitter }) => {
+          const fields = [name, description, twitter];
 
           for (const field of fields) {
             return field.toLowerCase().includes(query);

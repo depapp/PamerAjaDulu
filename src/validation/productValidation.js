@@ -9,8 +9,8 @@ export default function productValidation(values) {
         errors.subtitle = "Judul harus di isi"
     }
 
-    // if (!values.company) {
-    //     errors.company = 'Username Twitter harus di isi'
+    // if (!values.twitter) {
+    //     errors.twitter = 'Username Twitter harus di isi'
     // }
 
     if (!values.url) {
