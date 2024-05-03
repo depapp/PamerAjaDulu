@@ -14,7 +14,8 @@ cd PamerAjaDulu
 ```bash
 npm install
 ```
-- rename file `.env.example` menjadi `.env`, kemudian isi semua value yg dibutuhkan
+- copy file `.env.example` dan paste di tempat yang sama
+- rename file `.env.example` yang hasil copy-paste tadi menjadi `.env`, kemudian isi semua value yg dibutuhkan
 - jalankan projectnya menggunakan
 ```bash
 npm run dev
