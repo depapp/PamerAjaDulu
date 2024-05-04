@@ -310,7 +310,7 @@ export default function Product({ product }) {
   };
 
   return (
-    <Layout>
+    <Layout title={`${product.name} | #PamerAjaDulu`}>
       <Article>
         <GoBackLink href="/">
           <BackIcon /> Kembali

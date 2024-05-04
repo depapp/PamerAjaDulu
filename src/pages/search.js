@@ -33,7 +33,7 @@ const SearchPage = () => {
   }, [q, products]);
 
   return (
-    <Layout>
+    <Layout title={`Pencarian: ${q} | #PamerAjaDulu`}>
       <div className="wrapper">
         <div className="container">
           <ul className="product_list">

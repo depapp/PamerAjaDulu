@@ -37,7 +37,7 @@ const Register = () => {
 
   return (
     <div>
-      <Layout>
+      <Layout title="Daftar | #PamerAjaDulu">
         <Form onSubmit={handleSubmit} noValidate>
           <h1 className="formTitle">Daftar</h1>
           <Error>{error}</Error>

@@ -102,7 +102,7 @@ const NewPost = () => {
 
   return (
     <div>
-      <Layout>
+      <Layout title="Kuy Pamerin | #PamerAjaDulu">
         {!user && (
           <div className="containerHomeMessage">
             <h4 className="title">Anda belum masuk</h4>

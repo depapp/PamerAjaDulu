@@ -36,7 +36,7 @@ const Login = () => {
 
   return (
     <div>
-      <Layout>
+      <Layout title="Masuk | #PamerAjaDulu">
         <Form onSubmit={handleSubmit} noValidate>
           <h1 className="formTitle">Masuk</h1>
           <Error>{error}</Error>
