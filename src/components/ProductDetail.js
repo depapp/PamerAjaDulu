@@ -209,17 +209,17 @@ export default function ProductDetail({ product }) {
         case "xMinutes":
           return `${count} menit`;
         case "aboutXHours":
-          return `sekitar ${count} jam`;
+          return `${count} jam`;
         case "xHours":
           return `${count} jam`;
         case "xDays":
           return `${count} hari`;
         case "aboutXMonths":
-          return `sekitar ${count} bulan`;
+          return `${count} bulan`;
         case "xMonths":
           return `${count} bulan`;
         case "aboutXYears":
-          return `sekitar ${count} tahun`;
+          return `${count} tahun`;
         case "xYears":
           return `${count} tahun`;
         case "overXYears":
