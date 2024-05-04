@@ -10,6 +10,7 @@ import Layout from "../../components/Layout";
 import BackIcon from "../../components/BackIcon";
 import ButtonVisit from "../../components/ButtonVisit";
 import WriteDocsIcon from "../../components/WriteDocsIcon";
+import UserCommentIcon from "../../components/UserCommentIcon";
 
 const Comments = styled.div``;
 
@@ -193,6 +194,29 @@ const LaunchSummary = styled.p`
   font-weight: 400;
 `;
 
+const CommentUserContainer = styled.div`
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+`;
+
+const CommentUser = styled.span`
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 24px;
+`;
+
+const ProductOwner = styled.p`
+  display: inline;
+  border-radius: 999px;
+  color: #ffffff;
+  background-color: #67ba24;
+  margin-left: 8px;
+  padding: 4px 8px;
+  font-weight: 600;
+  font-size: 11px;
+`;
+
 export default function Product({ product }) {
   const [localProduct, setLocalProduct] = useState(null);
   const [minHeight] = useState(64);
@@ -369,7 +393,6 @@ export default function Product({ product }) {
                 <Submit type="submit">Kirim</Submit>
               </SubmitContainer>
             </Form>
-
             <Comments>
               {comments.length > 0 && (
                 <CommentsList>
@@ -382,9 +405,17 @@ export default function Product({ product }) {
                     .reverse()
                     .map((comment, i) => (
                       <li key={`${comment.userId}-${i}`}>
+                        <CommentUserContainer>
+                          <UserIconContainer>
+                            <UserCommentIcon />
+                          </UserIconContainer>
+                          <CommentUser>{comment.userName}</CommentUser>
+                          {isCreator(comment.userId) && (
+                            <ProductOwner>Yang Mamerin Karya</ProductOwner>
+                          )}
+                        </CommentUserContainer>
                         <CommentMessage>
-                          "{comment.msg}" -{" "}
-                          <CommentUsername>{comment.userName}</CommentUsername>
+                          <CommentUsername>{comment.msg}</CommentUsername>
                         </CommentMessage>
                       </li>
                     ))}
