@@ -375,7 +375,7 @@ export default function Product({ product }) {
           </Link>
           <LaunchSummary>
             <br />
-            diposting oleh <SmallTextView>{creator.name}</SmallTextView> <br />
+            diposting oleh <SmallTextView>{creator.name}</SmallTextView>{" "}
             pada tanggal <SmallTextView>{formatDate(date)}</SmallTextView>
           </LaunchSummary>
           <div>
