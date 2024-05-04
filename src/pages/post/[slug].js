@@ -390,7 +390,7 @@ export default function Product({ product }) {
                 onChange={handleChange}
               />
               <SubmitContainer>
-                <Submit type="submit">Kirim</Submit>
+                <Submit type="submit" data-umami-event="klik-kirim-komentar">Kirim</Submit>
               </SubmitContainer>
             </Form>
             <Comments>
