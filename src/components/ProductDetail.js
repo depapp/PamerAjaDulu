@@ -167,6 +167,7 @@ export default function ProductDetail({ product }) {
     description,
     imageurl,
     votes,
+    comments,
     hasVoted,
     slug,
   } = product;
@@ -275,8 +276,20 @@ export default function ProductDetail({ product }) {
             <Title>{name}</Title>
             <DescriptionText>{subtitle || description}</DescriptionText>
             <TimeAgo>
+              {comments.length} komentar <span>·</span>{" "}
               {formatTimeToNow(new Date(date), { locale: idLocale })} yang lalu
             </TimeAgo>
+            {/* 
+            Uncomment this section to hide `0 komentar`
+              <TimeAgo>
+                {comments.length > 0 && (
+                  <>
+                    {comments.length} komentar <span>·</span>{" "}
+                  </>
+                )}
+                {formatTimeToNow(new Date(date), { locale: idLocale })} yang lalu
+              </TimeAgo>
+            */}
           </ProductDetails>
         </ProductDescription>
         <Votes onClick={handleVote} upvoted={upvoted}>
