@@ -31,7 +31,7 @@ const Register = () => {
     } catch (error) {
       console.error(error.message);
       setError(
-        "Oops! This one is on us. There was an error when creating your account."
+        "Oops! Ada yang error."
       );
     }
   }
