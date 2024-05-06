@@ -1,6 +1,7 @@
 import styled from "@emotion/styled";
 
 const Button = styled.button`
+  cursor: pointer;
   display: flex;
   padding: 10px 20px;
   background-color: #67ba24;
