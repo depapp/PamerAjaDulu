@@ -6,7 +6,6 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 0;
-  
   @media (max-width: 768px) {
     max-width: 300px;
   }
@@ -14,14 +13,8 @@ export const Form = styled.form`
 
 export const Field = styled.div`
   display: flex;
-  font-size: 1rem;
   flex-direction: column;
   align-items: flex-start;
-
-  label {
-    margin: 7px 0;
-    font-size: 1rem;
-  }
 
   input,
   textarea {
@@ -46,10 +39,8 @@ export const InputSubmit = styled.input`
   padding: 1rem;
   text-align: center;
   color: white;
-  font-size: 1.1rem;
   border: none;
   border-radius: 4px;
-  margin-top: 2rem;
 
   &:hover {
     cursor: pointer;
@@ -58,7 +49,5 @@ export const InputSubmit = styled.input`
 
 export const Error = styled.p`
   color: #f53a29;
-  height: 1rem;
   padding: 0;
-  font-size: 14px;
 `;

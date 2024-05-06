@@ -7,6 +7,7 @@ import useValidation from "../hooks/useValidation";
 import registerValidation from "../validation/registerValidation";
 import { Form, Field, InputSubmit, Error } from "../components/Form";
 import firebase from "../firebase/index";
+import ButtonLoginWith from "../components/ButtonLoginWith";
 
 const initialState = {
   name: "",
@@ -38,8 +39,30 @@ const Register = () => {
   return (
     <div>
       <Layout title="Daftar | #PamerAjaDulu">
-        <Form onSubmit={handleSubmit} noValidate>
+        <center>
           <h1 className="formTitle">Daftar</h1>
+          <br />
+          <br />
+          <ButtonLoginWith
+            onClick={() =>
+              firebase
+                .googleSignIn()
+                .then((user) => {
+                  router.push("/");
+                })
+                .catch((error) => {
+                  console.error(error.message);
+                  setError("Gagal daftar menggunakan akun Google");
+                })
+            }
+          >
+            Daftar menggunakan akun Google
+          </ButtonLoginWith>
+        </center>
+        <br />
+        <br />
+        <div style={{ textAlign: "center", color: "#67ba24" }}>atau</div>
+        <Form onSubmit={handleSubmit} noValidate>
           <Error>{error}</Error>
           <Field>
             <label htmlFor="name"></label>

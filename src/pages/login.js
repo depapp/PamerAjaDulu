@@ -8,6 +8,7 @@ import loginValidation from "../validation/loginValidation";
 
 import Layout from "../components/Layout";
 import { Form, Field, InputSubmit, Error } from "../components/Form";
+import ButtonLoginWith from "../components/ButtonLoginWith";
 
 const initialState = {
   password: "",
@@ -37,8 +38,30 @@ const Login = () => {
   return (
     <div>
       <Layout title="Masuk | #PamerAjaDulu">
-        <Form onSubmit={handleSubmit} noValidate>
+        <center>
           <h1 className="formTitle">Masuk</h1>
+          <br />
+          <br />
+          <ButtonLoginWith
+            onClick={() =>
+              firebase
+                .googleSignIn()
+                .then((user) => {
+                  router.push("/");
+                })
+                .catch((error) => {
+                  console.error(error.message);
+                  setError("Gagal masuk menggunakan akun Google");
+                })
+            }
+          >
+            Masuk menggunakan akun Google
+          </ButtonLoginWith>
+        </center>
+        <br />
+        <br />
+        <div style={{ textAlign: "center", color: "#67ba24" }}>atau</div>
+        <Form onSubmit={handleSubmit} noValidate>
           <Error>{error}</Error>
           <Field>
             <label htmlFor="name"></label>
