@@ -3,7 +3,7 @@ import Layout from "../../components/Layout";
 import useValidation from "../../hooks/useValidation";
 import productValidation from "../../validation/productValidation";
 import { useRouter } from "next/router";
-import { Form, Field, InputSubmit, Error } from "../../components/Form";
+import { Form, Field, InputSubmit, Error } from "../../components/FormPamerin";
 import { FirebaseContext } from "../../firebase/index";
 
 const initialState = {
