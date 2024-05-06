@@ -65,7 +65,7 @@ const Header = () => {
       <NavContainer>
         {user && (
           <Link href="/" onClick={handleLogout}>
-            <Button>Keluar</Button>
+            <Button>Halo, {user.displayName}</Button>
           </Link>
         )}
         {!user && !AUTH_PAGES.includes(parsedPathname) && (
