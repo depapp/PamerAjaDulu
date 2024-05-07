@@ -370,8 +370,8 @@ export default function Product({ product }) {
         <ProductContainer>
           <Description>{description}</Description>
           <br />
-          <Link href={`${url}`} target="_blank" data-umami-event="klik-tombol-lihat-karya">
-            <ButtonVisit>Lihat Karya</ButtonVisit>
+          <Link href={`${url}`} target="_blank">
+            <ButtonVisit data-umami-event="klik-tombol-lihat-karya">Lihat Karya</ButtonVisit>
           </Link>
           <LaunchSummary>
             <br />
