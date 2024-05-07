@@ -54,6 +54,7 @@ const Login = () => {
                   setError("Gagal masuk menggunakan akun Google");
                 })
             }
+            data-umami-event="klik-masuk-dengan-akun-google"
           >
             Masuk menggunakan akun Google
           </ButtonLoginWith>

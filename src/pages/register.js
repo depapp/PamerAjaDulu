@@ -55,6 +55,7 @@ const Register = () => {
                   setError("Gagal daftar menggunakan akun Google");
                 })
             }
+            data-umami-event="klik-daftar-dengan-akun-google"
           >
             Daftar menggunakan akun Google
           </ButtonLoginWith>
