@@ -336,7 +336,7 @@ export default function Product({ product }) {
   return (
     <Layout title={`${product.name} | #PamerAjaDulu`}>
       <Article>
-        <GoBackLink href="/">
+        <GoBackLink href="/" data-umami-event="klik-tombol-kembali-dari-halaman-produk">
           <BackIcon /> Kembali
         </GoBackLink>
         <ImageAndPosition>
@@ -354,7 +354,7 @@ export default function Product({ product }) {
           </ImageContainer>
           {company && (
             <Position>
-              <Link href={`https://twitter.com/${company}`} target="_blank">
+              <Link href={`https://twitter.com/${company}`} target="_blank" data-umami-event="klik-tombol-akun-twitter">
                 @{company}
               </Link>
             </Position>
@@ -370,7 +370,7 @@ export default function Product({ product }) {
         <ProductContainer>
           <Description>{description}</Description>
           <br />
-          <Link href={`${url}`} target="_blank">
+          <Link href={`${url}`} target="_blank" data-umami-event="klik-tombol-lihat-karya">
             <ButtonVisit>Lihat Karya</ButtonVisit>
           </Link>
           <LaunchSummary>

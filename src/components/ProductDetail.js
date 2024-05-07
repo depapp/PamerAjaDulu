@@ -293,7 +293,7 @@ export default function ProductDetail({ product }) {
             */}
           </ProductDetails>
         </ProductDescription>
-        <Votes onClick={handleVote} upvoted={upvoted}>
+        <Votes onClick={handleVote} upvoted={upvoted} data-umami-event="klik-tombol-upvote">
           <UpVote upvoted={upvoted} />
           <p>{votes}</p>
         </Votes>
