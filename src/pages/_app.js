@@ -10,7 +10,7 @@ export default function App({ Component, pageProps }) {
     <>
       <Head>
         <link href="/favicon.ico" type="image/png" />
-        <script defer src={`https://eu.umami.is/script.js`} data-website-id={process.env.UMAMI_WEBSITE_ID}></script>
+        <script defer src={`https://eu.umami.is/script.js`} data-website-id={process.env.UMAMI_WEBSITE_ID} crossorigin="anonymous"></script>
       </Head>
       <FirebaseContext.Provider
         value={{
