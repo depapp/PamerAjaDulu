@@ -270,33 +270,6 @@ export default function Product({ product }) {
     date,
   } = localProduct ? localProduct : product;
 
-  const handleVote = () => {
-    if (!user) return router.push("/login");
-
-    let totalVotes = votes;
-    let usersHaveVoted = [...hasVoted];
-
-    if (hasVoted.includes(user.uid)) {
-      totalVotes = votes - 1;
-      usersHaveVoted = usersHaveVoted.filter((uid) => uid !== user.uid);
-    } else {
-      totalVotes = votes + 1;
-      usersHaveVoted = [...usersHaveVoted, user.uid];
-    }
-
-    firebase.db
-      .collection("products")
-      .doc(id)
-      .update({ votes: totalVotes, hasVoted: usersHaveVoted });
-
-    setLocalProduct({
-      ...product,
-      votes: totalVotes,
-    });
-
-    setQueryDB(true);
-  };
-
   const isCreator = (id) => {
     if (creator.id === id) {
       return true;
@@ -385,7 +358,6 @@ export default function Product({ product }) {
               </UserIconContainer>
               <TextArea
                 placeholder="tinggalkan komentarmu disini."
-                height={height}
                 value={comment}
                 onChange={handleChange}
               />
