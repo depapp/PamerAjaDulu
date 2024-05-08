@@ -65,6 +65,7 @@ const NewPost = () => {
       },
       hasVoted: [],
       slug,
+      votedBy: [],
     };
 
     firebase.db.collection("products").add(product);

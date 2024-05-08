@@ -268,6 +268,7 @@ export default function Product({ product }) {
     hasVoted,
     tags,
     date,
+    votedBy,
   } = localProduct ? localProduct : product;
 
   const isCreator = (id) => {
@@ -309,7 +310,10 @@ export default function Product({ product }) {
   return (
     <Layout title={`${product.name} | #PamerAjaDulu`}>
       <Article>
-        <GoBackLink href="/" data-umami-event="klik-tombol-kembali-dari-halaman-produk">
+        <GoBackLink
+          href="/"
+          data-umami-event="klik-tombol-kembali-dari-halaman-produk"
+        >
           <BackIcon /> Kembali
         </GoBackLink>
         <ImageAndPosition>
@@ -327,7 +331,11 @@ export default function Product({ product }) {
           </ImageContainer>
           {company && (
             <Position>
-              <Link href={`https://twitter.com/${company}`} target="_blank" data-umami-event="klik-tombol-akun-twitter">
+              <Link
+                href={`https://twitter.com/${company}`}
+                target="_blank"
+                data-umami-event="klik-tombol-akun-twitter"
+              >
                 @{company}
               </Link>
             </Position>
@@ -344,12 +352,20 @@ export default function Product({ product }) {
           <Description>{description}</Description>
           <br />
           <Link href={`${url}`} target="_blank">
-            <ButtonVisit data-umami-event="klik-tombol-lihat-karya">Lihat Karya</ButtonVisit>
+            <ButtonVisit data-umami-event="klik-tombol-lihat-karya">
+              Lihat Karya
+            </ButtonVisit>
           </Link>
+          <br />
+          {votedBy.length > 0 && (
           <LaunchSummary>
-            <br />
-            diposting oleh <SmallTextView>{creator.name}</SmallTextView>{" "}
-            pada tanggal <SmallTextView>{formatDate(date)}</SmallTextView>
+            karya ini diapresiasi oleh <SmallTextView>{votes}</SmallTextView>{" "}
+            orang: <SmallTextView>{votedBy.join(", ")}</SmallTextView>.
+          </LaunchSummary>
+          )}
+          <LaunchSummary>
+            diposting oleh <SmallTextView>{creator.name}</SmallTextView> pada
+            tanggal <SmallTextView>{formatDate(date)}</SmallTextView>
           </LaunchSummary>
           <div>
             <Form onSubmit={onSubmit}>
@@ -362,7 +378,9 @@ export default function Product({ product }) {
                 onChange={handleChange}
               />
               <SubmitContainer>
-                <Submit type="submit" data-umami-event="klik-kirim-komentar">Kirim</Submit>
+                <Submit type="submit" data-umami-event="klik-kirim-komentar">
+                  Kirim
+                </Submit>
               </SubmitContainer>
             </Form>
             <Comments>

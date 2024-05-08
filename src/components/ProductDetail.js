@@ -171,6 +171,7 @@ export default function ProductDetail({ product }) {
     comments,
     hasVoted,
     slug,
+    votedBy,
   } = product;
 
   const [upvoted, setUpvoted] = useState(false);
@@ -240,13 +241,16 @@ export default function ProductDetail({ product }) {
 
     let totalVotes = votes;
     let usersHaveVoted = [...hasVoted];
+    let usersVotedBy = votedBy || [];
 
     if (hasVoted.includes(user.uid)) {
       totalVotes = votes - 1;
       usersHaveVoted = usersHaveVoted.filter((uid) => uid !== user.uid);
+      usersVotedBy = usersVotedBy.filter((name) => name !== user.displayName);
     } else {
       totalVotes = votes + 1;
       usersHaveVoted = [...usersHaveVoted, user.uid];
+      usersVotedBy = [...usersVotedBy, user.displayName];
     }
 
     setUpvoted(usersHaveVoted.includes(user.uid));
@@ -254,7 +258,7 @@ export default function ProductDetail({ product }) {
     firebase.db
       .collection("products")
       .doc(id)
-      .update({ votes: totalVotes, hasVoted: usersHaveVoted });
+      .update({ votes: totalVotes, hasVoted: usersHaveVoted, votedBy: usersVotedBy });
   }
 
   return (
