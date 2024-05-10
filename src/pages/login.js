@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useContext, useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
 import firebase from "../firebase/index";
 import useValidation from "../hooks/useValidation";
 import loginValidation from "../validation/loginValidation";
+import FirebaseContext from "../firebase/context";
 
 import Layout from "../components/Layout";
 import { Form, Field, InputSubmit, Error } from "../components/Form";
@@ -24,6 +25,12 @@ const Login = () => {
   const { password, email } = values;
 
   const router = useRouter();
+
+  const { user } = useContext(FirebaseContext);
+
+  useEffect(() => {
+    if (user) router.push('/');
+  }, [user]);
 
   async function logIn() {
     try {

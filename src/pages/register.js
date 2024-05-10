@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext, useEffect } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
@@ -8,6 +8,7 @@ import registerValidation from "../validation/registerValidation";
 import { Form, Field, InputSubmit, Error } from "../components/Form";
 import firebase from "../firebase/index";
 import ButtonLoginWith from "../components/ButtonLoginWith";
+import FirebaseContext from "../firebase/context";
 
 const initialState = {
   name: "",
@@ -22,8 +23,15 @@ const Register = () => {
     useValidation(initialState, registerValidation, register);
 
   const { name, password, email } = values;
+  
   const router = useRouter();
 
+  const { user } = useContext(FirebaseContext);
+
+  useEffect(() => {
+    if (user) router.push('/');
+  }, [user]);
+  
   async function register() {
     try {
       await firebase.register(name, email, password);
