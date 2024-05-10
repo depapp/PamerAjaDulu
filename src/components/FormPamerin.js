@@ -6,7 +6,7 @@ export const Form = styled.form`
   display: flex;
   flex-direction: column;
   gap: 0;
-  
+
   @media (max-width: 768px) {
     max-width: 300px;
   }
@@ -17,6 +17,7 @@ export const Field = styled.div`
   font-size: 1rem;
   flex-direction: column;
   align-items: flex-start;
+  color: #4b587c;
 
   label {
     margin: 7px 0;

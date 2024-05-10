@@ -92,6 +92,24 @@ a {
   padding: 1rem;
 }
 
+.select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  width: max-content;
+  color: #888888;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 0.8rem;
+  padding-right: 58.5%;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.5rem center;
+  background-size: 18px;
+  box-sizing: border-box;
+}
+
 .title {
   padding: 0;
   margin: 0;
@@ -124,5 +142,8 @@ a {
   }
   .containerHomeMessage {
     margin: 2.3rem 1.5rem 0.6rem;
+  }
+  .select {
+    padding-right: 30.6%;
   }
 }

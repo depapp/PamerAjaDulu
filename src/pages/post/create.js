@@ -13,7 +13,7 @@ const initialState = {
   image: "",
   url: "",
   description: "",
-  tags: [],
+  tags: "Aplikasi",
 };
 
 const NewPost = () => {
@@ -117,6 +117,27 @@ const NewPost = () => {
             </div>
             <Form onSubmit={handleSubmit} noValidate>
               <div>
+                <Field>
+                  <label htmlFor="tags"></label>
+                  <select
+                    className="select"
+                    id="tags"
+                    name="tags"
+                    value={tags}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                  >
+                    <option value="Aplikasi">Kategori: Aplikasi</option>
+                    <option value="Boilerplate">Kategori: Boilerplate</option>
+                    <option value="Artikel/Tulisan">
+                      Kategori: Artikel/Tulisan
+                    </option>
+                    <option value="Channel Youtube">
+                      Kategori: Channel Youtube
+                    </option>
+                  </select>
+                </Field>
+
                 <Field>
                   <label htmlFor="name"></label>
                   <input
