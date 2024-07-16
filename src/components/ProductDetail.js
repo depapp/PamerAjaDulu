@@ -150,7 +150,7 @@ const Votes = styled.div`
 `;
 
 const UpVote = styled.div`
-  background-image: url(https://i.ibb.co/1Xd76xJ/pad-animation.png);
+  background-image: url(https://i.ibb.co.com/HGTx8Rb/BFebEsAM.jpg);
   width: 45px;
   height: 26px;
   background-position: ${(props) => (props.upvoted ? "100%" : "0%")};
