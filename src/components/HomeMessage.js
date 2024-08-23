@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ButtonSupport from "./ButtonSupport";
 
 const HomeMessage = () => {
   return (
@@ -16,13 +17,16 @@ const HomeMessage = () => {
           cuitan ini
         </Link>
       </p>
-      <p>
+      {/* <p>
         Nemu bug? Boleh bisikin{" "}
         <Link href="https://twitter.com/depapp" target="_blank">
           disini
         </Link>{" "}
         ya 🙇🏻‍♂️
-      </p>
+      </p> */}
+      <div style={{ display: 'flex', justifyContent: 'left' }}>
+        <ButtonSupport>Dukung proyek ini</ButtonSupport>
+      </div>
     </div>
   );
 };
