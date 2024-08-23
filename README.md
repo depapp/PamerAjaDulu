@@ -1,5 +1,6 @@
 # #PamerAjaDulu
-![PamerDuluAja-MBA](https://github.com/depapp/PamerAjaDulu/assets/6134774/d9cb0265-b146-4ac1-9283-98f9df988631)
+| ![pamerajadulu-mobile](https://github.com/user-attachments/assets/de46db44-8112-43e6-97c8-82725730040f) | ![pamerajadulu-desktop](https://github.com/user-attachments/assets/6a659c4c-f09d-4f5c-9e9b-f6f058314c7e) |
+| --- | --- |
 
 ## :computer: cara setupnya
 - clone projectnya
