@@ -17,6 +17,7 @@ npm install
 ```
 - copy file `.env.example` dan paste di tempat yang sama
 - rename file `.env.example` yang hasil copy-paste tadi menjadi `.env`, kemudian isi semua value yg dibutuhkan
+- jika merasa rumit menyiapkan semua value dari file `.env`, bisa hubungi saya <a href="https://x.com/depapp" target="_blank">di Twitter</a> untuk mendapatkan contohnya
 - jalankan projectnya menggunakan
 ```bash
 npm run dev
