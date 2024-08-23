@@ -1,6 +1,6 @@
 # #PamerAjaDulu
-| ![pamerajadulu-mobile](https://github.com/user-attachments/assets/de46db44-8112-43e6-97c8-82725730040f) | ![pamerajadulu-desktop](https://github.com/user-attachments/assets/6a659c4c-f09d-4f5c-9e9b-f6f058314c7e) |
-| --- | --- |
+| ![pamerajadulu-mobile](https://github.com/user-attachments/assets/de46db44-8112-43e6-97c8-82725730040f) | ![pamerajadulu-mobile-2](https://github.com/user-attachments/assets/648cd59c-2590-4e6a-a4e2-ecaea58ab67f) | ![pamerajadulu-desktop](https://github.com/user-attachments/assets/6a659c4c-f09d-4f5c-9e9b-f6f058314c7e) |
+| --- | --- | --- |
 
 ## :computer: cara setupnya
 - clone projectnya
