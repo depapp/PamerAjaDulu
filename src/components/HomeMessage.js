@@ -25,7 +25,9 @@ const HomeMessage = () => {
         ya 🙇🏻‍♂️
       </p> */}
       <div style={{ display: 'flex', justifyContent: 'left' }}>
-        <ButtonSupport>Dukung proyek ini</ButtonSupport>
+        <Link href="https://github.com/depapp/PamerAjaDulu" target="_blank">
+          <ButtonSupport>Dukung proyek ini</ButtonSupport>
+        </Link>
       </div>
     </div>
   );
